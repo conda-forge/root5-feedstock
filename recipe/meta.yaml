@@ -20,55 +20,67 @@ requirements:
  
  build:
      - toolchain
-     - gcc  # [linux]
-     - python x.x
-     - gsl
+     - python
      - fftw
      - cmake
      - cfitsio
+     - mesalib
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
-     - jpeg
-     - libpng
-     - zlib
-     - libxml2
-     - mesalib
+     - jpeg 9*
+     - libpng >=1.6.32,<1.6.35
+     - zlib 1.2.11
+     - libxml2 2.9.*
+     - blas
+     - openblas 0.2.20|0.2.20.*
+     - gsl 2.2.*
+     - krb5 1.14.*
     
  run:
-     - python x.x
-     - gsl
+     - python
      - fftw
+     - cmake
      - cfitsio
+     - mesalib
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
-     - jpeg
-     - libpng
-     - zlib
-     - libgcc  # [linux]
-     - libxml2
-     - mesalib
+     - jpeg 9*
+     - libpng >=1.6.32,<1.6.35
+     - zlib 1.2.11
+     - libxml2 2.9.*
+     - blas
+     - openblas 0.2.20|0.2.20.*
+     - gsl 2.2.*
+     - krb5 1.14.*
+
 
 test:
   commands:
     - test -f ${PREFIX}/lib/root/libCore.so  # [linux]
     - test -f ${PREFIX}/lib/root/libCore.so  # [osx]
     - test -f ${PREFIX}/include/root/TROOT.h
-    #- conda inspect linkages -p $PREFIX root5  # [not win]
-    #- conda inspect objects -p $PREFIX root5  # [osx]
-    - root -b -q ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C >& /dev/null
-    - root -b -q ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null
-    - root -b -q ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null
+    # NOTE: it is normal for the following to complain about missing links to
+    # *.dll files of CINT. They will be found at runtime thanks to the system.rootrc
+    # file which is read when ROOT starts
+    - conda inspect linkages -p $PREFIX root5  # [not win]
+    - conda inspect objects -p $PREFIX root5  # [osx]
+    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C >& /dev/null
+    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null
+    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null
     - cd ${PREFIX}/share/doc/root/tutorials/pyroot && python fillrandom.py && python fit1.py >& /dev/null
-    - cd ${PREFIX}/share/doc/root/tutorials/fitsio && root -b -q FITS_tutorial1.C >& /dev/null
+    - cd ${PREFIX}/share/doc/root/tutorials/fitsio && root -b -x -q FITS_tutorial1.C >& /dev/null
 
 about:
   home: https://root.cern.ch/
-  license: LGPL
-  summary: 'A modular scientific software framework. It provides all the functionalities needed to deal with big data processing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other languages such as Python and R.'
-  license_family: GPL
-  license_file: '{{ environ["SRC_DIR"] }}/LICENSE'
+  license: LGPL-2.1
+  summary: 'A modular scientific software framework. It provides all the 
+  functionalities needed to deal with big data processing, statistical analysis,
+  visualisation and storage. It is mainly written in C++ but integrated with 
+  other languages such as Python and R.'
+  license_family: LGPL
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
