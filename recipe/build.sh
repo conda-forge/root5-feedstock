@@ -17,8 +17,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else
     
-    CC=${PREFIX}/bin/gcc
-    CXX=${PREFIX}/bin/g++
+    CC=gcc
+    CXX=g++
     
     cmake .. -Dall=ON -Dkrb5=ON -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
              -Dccache=ON -Dfortran=OFF -Dexplicit_link=ON -Dgsl_shared=ON -Dcling=OFF -Dopengl=ON  \
