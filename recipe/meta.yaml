@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-   number: 2
+   number: 3
    skip: true  # [win]
    skip: true  # [py3k]
 
@@ -29,33 +29,32 @@ requirements:
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
      - jpeg 9*
-     - libpng >=1.6.32,<1.6.35
-     - zlib 1.2.11
+     - libpng >=1.6.28,<1.7
+     - zlib 1.2.8
      - libxml2 2.9.*
      - blas
-     - openblas 0.2.20|0.2.20.*
+     - openblas 0.2.19|0.2.19.*
      - gsl 2.2.*
      - krb5 1.14.*
-     - readline 7.0
+     - readline 6.2*
     
  run:
      - python
      - fftw
-     - cmake
      - cfitsio
      - mesalib
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
      - jpeg 9*
-     - libpng >=1.6.32,<1.6.35
-     - zlib 1.2.11
+     - libpng >=1.6.28,<1.7
+     - zlib 1.2.8
      - libxml2 2.9.*
      - blas
-     - openblas 0.2.20|0.2.20.*
+     - openblas 0.2.19|0.2.19.*
      - gsl 2.2.*
      - krb5 1.14.*
-     - readline 7.0
+     - readline 6.2
 
 
 test:
