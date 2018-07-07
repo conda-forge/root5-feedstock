@@ -12,33 +12,36 @@ source:
   sha256: {{ sha256 }}
 
 build:
-   number: 0
+   number: 1
    skip: true  # [win]
    skip: true  # [py3k]
 
 requirements:
  
  build:
-     - toolchain
+     - cmake
+     - {{ compiler('fortran') }}
+     - {{ compiler('c') }}
+     - {{ compiler('cxx') }}
+ host:
      - python
      - fftw
-     - cmake
      - cfitsio
      - mesalib
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
-     - jpeg 9*
-     - libpng >=1.6.28,<1.7
-     - zlib 1.2.8
-     - libxml2 2.9.*
+     - jpeg
+     - libpng
+     - zlib
+     - libxml2
      - blas
-     - openblas 0.2.19|0.2.19.*
-     - gsl 2.2.*
-     - krb5 1.14.*
-     - readline 6.2*
-     - icu 58.*
-    
+     - openblas
+     - gsl
+     - krb5
+     - readline
+     - icu
+
  run:
      - python
      - fftw
@@ -47,16 +50,16 @@ requirements:
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
-     - jpeg 9*
-     - libpng >=1.6.28,<1.7
-     - zlib 1.2.8
-     - libxml2 2.9.*
+     - jpeg
+     - libpng
+     - zlib
+     - libxml2
      - blas
-     - openblas 0.2.19|0.2.19.*
-     - gsl 2.2.*
-     - krb5 1.14.*
-     - readline 6.2
-     - icu 58.*
+     - openblas
+     - gsl
+     - krb5
+     - readline
+     - icu
 
 
 test:
@@ -78,9 +81,9 @@ test:
 about:
   home: https://root.cern.ch/
   license: LGPL-2.1
-  summary: 'A modular scientific software framework. It provides all the 
+  summary: 'A modular scientific software framework. It provides all the
   functionalities needed to deal with big data processing, statistical analysis,
-  visualisation and storage. It is mainly written in C++ but integrated with 
+  visualisation and storage. It is mainly written in C++ but integrated with
   other languages such as Python and R.'
   license_family: LGPL
   license_file: LICENSE
