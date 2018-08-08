@@ -70,8 +70,10 @@ test:
     # NOTE: it is normal for the following to complain about missing links to
     # *.dll files of CINT. They will be found at runtime thanks to the system.rootrc
     # file which is read when ROOT starts
-    - conda inspect linkages -p $PREFIX root5  # [not win]
-    - conda inspect objects -p $PREFIX root5  # [osx]
+    # Committing these because they take too long and the Travis CI and Circle CI build
+    # would time out
+    #- conda inspect linkages -p $PREFIX root5  # [not win]
+    #- conda inspect objects -p $PREFIX root5  # [osx]
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C >& /dev/null
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null
