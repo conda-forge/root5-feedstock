@@ -10,7 +10,7 @@ if [ "$(uname)" == "Darwin" ]; then
     cmake .. -Dall=ON -Dkrb5=ON -Dcocoa=ON -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
              -Dccache=OFF -Dexplicit_link=ON -Dgsl_shared=ON  \
              -Dbonjour=OFF -Dcintex=OFF -Dastiff=OFF -Dfitsio=OFF -Dfortran=OFF -Dcling=OFF -Dopengl=OFF \
-             -Dasimage=OFF -Dbuiltin_glew=OFF  -Dgdml=OFF -Dgenvector=OFF -Dhttp=OFF -Droofit=OFF \
+             -Dasimage=OFF -Dbuiltin_glew=OFF  -Dgdml=OFF -Dgenvector=OFF -Dhttp=OFF \
              -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \
              -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} 
 
