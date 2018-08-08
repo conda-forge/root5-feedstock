@@ -30,7 +30,7 @@ requirements:
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
-     - jpe
+     - jpeg
      - libpng
      - zlib
      - libxml2
