@@ -25,7 +25,7 @@ else
 
 fi
 
-cmake --build . --target install -- -j ${CPU_COUNT}
+cmake --build . --target install -- -j 4
 
 # Install pyROOT in the site-packages so there is no need for
 # setting PYTHONPATH
