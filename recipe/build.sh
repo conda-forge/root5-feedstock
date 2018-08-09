@@ -5,18 +5,31 @@ cd build
 export CFLAGS="${CFLAGS} -I${PREFIX}/include"
 export CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include"
 
-export COMMON_OPTIONS="-Dall=ON -Dkrb5=ON -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
-                       -Dccache=ON -Dfortran=OFF -Dexplicit_link=ON -Dgsl_shared=ON -Dcling=OFF -Dopengl=ON \
+asimage astiff bonjour builtin_afterimage builtin_ftgl builtin_freetype builtin_glew 
+builtin_pcre builtin_lz4 libcxx cintex cocoa exceptions explicitlink fftw3 
+fitsio gdml genvector gsl_shared http krb5 ldap mathmore memstat minuit2 
+opengl python reflex roofit rpath shared soversion sqlite ssl gnuinstall 
+table thread tmva unuran vdt xml
+
+asimage astiff builtin_afterimage builtin_ftgl builtin_glew builtin_pcre builtin_lz4 
+cintex exceptions explicitlink fftw3 fitsio gdml genvector gsl_shared http krb5 
+mathmore memstat minuit2 python reflex roofit rpath shadowpw shared soversion sqlite 
+ssl gnuinstall table thread tmva unuran vdt xft xml x11
+
+export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
+                       -Dexplicit_link=ON -Dgsl_shared=ON -Dccache=OFF \
+                       -Dfftw3=ON -Dfitsio=ON -Dmathmore=ON -Dminuit2=ON \
+                       -Dpython=ON -Droofit=ON -Dtable=ON -Dthread=ON -Dunuran=ON -Dvdt=ON -Dxml=ON \
                        -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \
                        -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release"
 
 if [ "$(uname)" == "Darwin" ]; then
     
-    cmake .. -Dcocoa=ON ${COMMON_OPTIONS}
+    cmake .. -Dcocoa=ON -Dlibcxx=ON ${COMMON_OPTIONS}
 
 else
 
-    cmake .. ${COMMON_OPTIONS}
+    cmake .. -Dx11=ON -Dxft=ON ${COMMON_OPTIONS}
 
 fi
 
