@@ -9,7 +9,7 @@ export CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include"
 
 export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
                        -Dexplicit_link=ON -Dgsl_shared=ON -Dccache=OFF \
-                       -Dfftw3=ON -Dfitsio=ON -Dmathmore=ON -Dminuit2=ON -Dreflex=ON \
+                       -Dfftw3=ON -Dfitsio=OFF -Dmathmore=ON -Dminuit2=ON -Dreflex=ON \
                        -Dpython=ON -Droofit=ON -Dtable=ON -Dthread=ON -Dunuran=ON -Dvdt=ON -Dxml=ON \
                        -Dasimage=OFF -Dastiff=OFF -Dbonjour=OFF -Dfortran=OFF -Dsqlite=OFF -Dtmva=OFF \
                        -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \

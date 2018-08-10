@@ -20,13 +20,13 @@ requirements:
  
  build:
      - cmake
-     - {{ compiler('fortran') }}
+#     - {{ compiler('fortran') }}
      - {{ compiler('c') }}
      - {{ compiler('cxx') }}
  host:
      - python
      - fftw
-     - cfitsio
+#     - cfitsio
      - mesalib
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
@@ -45,7 +45,7 @@ requirements:
  run:
      - python
      - fftw
-     - cfitsio
+#     - cfitsio
      - mesalib
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
@@ -78,7 +78,7 @@ test:
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null
     - cd ${PREFIX}/share/doc/root/tutorials/pyroot && python fillrandom.py && python fit1.py >& /dev/null
-    - cd ${PREFIX}/share/doc/root/tutorials/fitsio && root -b -x -q FITS_tutorial1.C >& /dev/null
+    #- cd ${PREFIX}/share/doc/root/tutorials/fitsio && root -b -x -q FITS_tutorial1.C >& /dev/null
 
 about:
   home: https://root.cern.ch/
