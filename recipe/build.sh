@@ -34,5 +34,5 @@ cp ${PREFIX}/lib/root/ROOT.py ${PREFIX}/lib/python2.7/site-packages/
 
 # Now add the location of the CINT Dynamic Link Library (dll) to the system path
 # for ROOT, so that we do not need to set LD_LIBRARY_PATH at runtime
-sed "s|Unix\.\*\.Root\.DynamicPath\:.*|Unix\.\*\.Root\.DynamicPath\:    \.:${PREFIX}/lib/root/cint/cint/stl:${PREFIX}/lib/root/cint/cint/include|g" ${PREFIX}/etc/root/system.rootrc > new_system.rootrc
+sed "s|Unix\.\*\.Root\.DynamicPath\:.*|Unix\.\*\.Root\.DynamicPath\:    \.:${PREFIX}/lib/root:${PREFIX}/lib/root/cint/cint/stl:${PREFIX}/lib/root/cint/cint/include|g" ${PREFIX}/etc/root/system.rootrc > new_system.rootrc
 mv new_system.rootrc ${PREFIX}/etc/root/system.rootrc
