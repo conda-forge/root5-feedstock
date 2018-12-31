@@ -17,7 +17,6 @@ build:
    skip: true  # [py3k]
 
 requirements:
- 
  build:
      - cmake
 #     - {{ compiler('fortran') }}
@@ -74,10 +73,10 @@ test:
     # would time out
     #- conda inspect linkages -p $PREFIX root5  # [not win]
     #- conda inspect objects -p $PREFIX root5  # [osx]
-    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C >& /dev/null
-    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null
-    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null
-    - cd ${PREFIX}/share/doc/root/tutorials/pyroot && python fillrandom.py && python fit1.py >& /dev/null
+    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C
+    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C
+    - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C
+    - cd ${PREFIX}/share/doc/root/tutorials/pyroot && python fillrandom.py && python fit1.py
     #- cd ${PREFIX}/share/doc/root/tutorials/fitsio && root -b -x -q FITS_tutorial1.C >& /dev/null
 
 about:
