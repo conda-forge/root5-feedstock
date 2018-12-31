@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-   number: 1
+   number: 2
    skip: true  # [win]
    skip: true  # [py3k]
 
@@ -27,10 +27,10 @@ requirements:
      - python
      - fftw
 #     - cfitsio
-     - mesalib
+     - mesalib      # [linux]
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
-     - xorg-libsm  # [linux]
+     - xorg-libsm   # [linux]
      - jpeg
      - libpng
      - zlib
@@ -46,10 +46,10 @@ requirements:
      - python
      - fftw
 #     - cfitsio
-     - mesalib
+     - mesalib      # [linux]
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
-     - xorg-libsm  # [linux]
+     - xorg-libsm   # [linux]
      - jpeg
      - libpng
      - zlib

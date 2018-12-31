@@ -2,20 +2,22 @@ MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 c_compiler:
 - toolchain_c
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
 cxx_compiler:
 - toolchain_cxx
-fortran_compiler:
-- toolchain_fort
 gsl:
-- '2.2'
+- '2.4'
 icu:
 - '58'
 jpeg:
 - '9'
 krb5:
-- '1.14'
+- '1.16'
 libpng:
-- 1.6.34
+- 1.6.35
 libxml2:
 - '2.9'
 macos_machine:
@@ -23,7 +25,7 @@ macos_machine:
 macos_min_version:
 - '10.9'
 openblas:
-- 0.2.20
+- 0.3.3
 pin_run_as_build:
   gsl:
     max_pin: x.x
