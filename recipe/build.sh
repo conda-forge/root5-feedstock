@@ -17,11 +17,11 @@ export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUI
 
 if [ "$(uname)" == "Darwin" ]; then
     
-    cmake .. -Dcocoa=ON -Dlibcxx=ON ${COMMON_OPTIONS}
+    cmake .. -std=cxx11 -Dcocoa=ON -Dlibcxx=ON ${COMMON_OPTIONS}
 
 else
 
-    cmake .. -Dx11=ON -Dxft=ON ${COMMON_OPTIONS}
+    cmake .. -std=cxx11 -Dx11=ON -Dxft=ON ${COMMON_OPTIONS}
 
 fi
 
