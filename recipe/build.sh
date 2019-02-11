@@ -13,7 +13,8 @@ export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUI
                        -Dpython=ON -Droofit=ON -Dtable=ON -Dthread=ON -Dunuran=ON -Dvdt=ON -Dxml=ON \
                        -Dasimage=OFF -Dastiff=OFF -Dbonjour=OFF -Dfortran=OFF -Dsqlite=OFF -Dtmva=OFF \
                        -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \
-                       -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release"
+                       -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release \
+                       -DCMAKE_CXX_STANDARD=11 -CMAKE_CXX_STANDARD_REQUIRED=ON"
 
 if [ "$(uname)" == "Darwin" ]; then
     
