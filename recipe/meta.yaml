@@ -20,7 +20,7 @@ requirements:
  
  build:
      - cmake
-#     - {{ compiler('fortran') }}
+     - {{ compiler('fortran') }}
      - {{ compiler('c') }}
      - {{ compiler('cxx') }}
  host:
@@ -42,7 +42,6 @@ requirements:
      - krb5
      - readline
      - icu
-     - toolchain
      - xz
 
  run:
