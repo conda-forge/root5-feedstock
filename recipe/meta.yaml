@@ -33,8 +33,8 @@ requirements:
      - xorg-libsm  # [linux]
      - jpeg
      - libpng
-     - lz4
-     - zlib
+     #- lz4
+     #- zlib
      - libxml2
      - blas
      - openblas
@@ -42,7 +42,7 @@ requirements:
      - krb5
      - readline
      - icu
-     - xz
+     #- xz
 
  run:
      - python
@@ -54,8 +54,8 @@ requirements:
      - xorg-libsm  # [linux]
      - jpeg
      - libpng
-     - lz4
-     - zlib
+     #- lz4
+     #- zlib
      - libxml2
      - blas
      - openblas
@@ -63,7 +63,7 @@ requirements:
      - krb5
      - readline
      - icu
-     - xz
+     #- xz
 
 test:
   commands:
