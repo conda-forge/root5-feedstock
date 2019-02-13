@@ -41,6 +41,7 @@ requirements:
      - krb5
      - readline
      - icu
+     - xz
 
  run:
      - python
@@ -60,7 +61,7 @@ requirements:
      - krb5
      - readline
      - icu
-
+     - xz
 
 test:
   commands:
