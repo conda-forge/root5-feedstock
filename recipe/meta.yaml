@@ -33,6 +33,7 @@ requirements:
      - xorg-libsm  # [linux]
      - jpeg
      - libpng
+     - lz4
      - zlib
      - libxml2
      - blas
@@ -53,6 +54,7 @@ requirements:
      - xorg-libsm  # [linux]
      - jpeg
      - libpng
+     - lz4
      - zlib
      - libxml2
      - blas
