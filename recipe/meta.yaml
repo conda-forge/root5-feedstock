@@ -42,6 +42,7 @@ requirements:
      - krb5
      - readline
      - icu
+     - toolchain
      - xz
 
  run:
