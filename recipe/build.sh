@@ -18,11 +18,11 @@ export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUI
 
 if [ "$(uname)" == "Darwin" ]; then
     
-    cmake .. -Dcocoa=ON -Dlibcxx=ON ${COMMON_OPTIONS}
+    cmake .. -DCMAKE_OSX_SYSROOT="${CONDA_BUILD_SYSROOT}" -Dcocoa=ON -Dlibcxx=ON ${COMMON_OPTIONS}
 
 else
 
-    cmake .. -Dx11=ON -Dxft=ON ${COMMON_OPTIONS}
+    cmake .. -DCMAKE_TOOLCHAIN_FILE="${RECIPE_DIR}/cross-linux.cmake" -Dx11=ON -Dxft=ON ${COMMON_OPTIONS}
 
 fi
 
