@@ -6,6 +6,7 @@ cd build
 
 export CFLAGS="${CFLAGS} -I${PREFIX}/include"
 export CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include"
+export ALT_SYSROOTS="${PREFIX} ${BUILD_PREFIX}/${HOST}/sysroot"
 
 export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
                        -Dexplicit_link=ON -Dgsl_shared=ON -Dccache=OFF \
@@ -14,7 +15,7 @@ export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUI
                        -Dasimage=OFF -Dastiff=OFF -Dbonjour=OFF -Dfortran=OFF -Dsqlite=OFF -Dtmva=OFF \
                        -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \
                        -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release
-                       -DCMAKE_CXX_STANDARD=11 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_SYSROOT=${PREFIX}"
+                       -DCMAKE_CXX_STANDARD=11 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_FIND_ROOT_PATH=${ALT_SYSROOTS}"
 
 if [ "$(uname)" == "Darwin" ]; then
     
