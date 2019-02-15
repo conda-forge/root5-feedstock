@@ -17,7 +17,7 @@ export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUI
                        -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \
                        -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release
                        -DCMAKE_CXX_STANDARD=11 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_FIND_ROOT_PATH=${ALT_SYSROOTS}
-                       -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY"
+                       -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON"
 
 if [ "$(uname)" == "Darwin" ]; then
     
@@ -25,7 +25,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else
 
-    cmake .. -Dx11=ON -Dxft=ON ${COMMON_OPTIONS}
+    cmake .. -Dx11=ON -Dxft=ON ${COMMON_OPTIONS} 
 
 fi
 
