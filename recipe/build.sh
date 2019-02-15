@@ -6,14 +6,18 @@ cd build
 
 export CFLAGS="${CFLAGS} -I${PREFIX}/include"
 export CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include"
+export ALT_SYSROOTS="${PREFIX} ${BUILD_PREFIX}/${HOST}/sysroot"
 
 export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
                        -Dexplicit_link=ON -Dgsl_shared=ON -Dccache=OFF \
                        -Dfftw3=ON -Dfitsio=OFF -Dmathmore=ON -Dminuit2=ON -Dreflex=ON \
                        -Dpython=ON -Droofit=ON -Dtable=ON -Dthread=ON -Dunuran=ON -Dvdt=ON -Dxml=ON \
                        -Dasimage=OFF -Dastiff=OFF -Dbonjour=OFF -Dfortran=OFF -Dsqlite=OFF -Dtmva=OFF \
+                       -Dbuiltin_zlib=ON -Dbuiltin_lzma=ON \
                        -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \
-                       -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release"
+                       -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release
+                       -DCMAKE_CXX_STANDARD=11 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_FIND_ROOT_PATH=${ALT_SYSROOTS}
+                       -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON"
 
 if [ "$(uname)" == "Darwin" ]; then
     
@@ -21,7 +25,7 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else
 
-    cmake .. -Dx11=ON -Dxft=ON ${COMMON_OPTIONS}
+    cmake .. -Dx11=ON -Dxft=ON ${COMMON_OPTIONS} 
 
 fi
 
