@@ -1,15 +1,17 @@
-build_number_decrement:
-- '0'
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 c_compiler:
-- gcc
+- clang
+c_compiler_version:
+- '4'
 channel_sources:
-- conda-forge/label/gcc7,defaults
+- conda-forge,defaults
 channel_targets:
-- conda-forge gcc7
+- conda-forge main
 cxx_compiler:
-- gxx
-docker_image:
-- condaforge/linux-anvil-comp7
+- clangxx
+cxx_compiler_version:
+- '4'
 gsl:
 - '2.4'
 icu:
@@ -22,6 +24,10 @@ libpng:
 - 1.6.35
 libxml2:
 - '2.9'
+macos_machine:
+- x86_64-apple-darwin13.4.0
+macos_min_version:
+- '10.9'
 openblas:
 - 0.3.3
 pin_run_as_build:
@@ -50,12 +56,5 @@ python:
 - '2.7'
 readline:
 - '7.0'
-zip_keys:
-- - c_compiler
-  - cxx_compiler
-  - channel_sources
-  - channel_targets
-  - docker_image
-  - build_number_decrement
 zlib:
 - '1.2'
