@@ -24,8 +24,8 @@ requirements:
      - {{ compiler('c') }}
      - {{ compiler('cxx') }}
  host:
-   - libblas
-   - libcblas
+     - libblas
+     - libcblas
      - python
      - fftw
 #     - cfitsio
