@@ -24,6 +24,8 @@ requirements:
      - {{ compiler('c') }}
      - {{ compiler('cxx') }}
  host:
+     - libblas
+     - libcblas
      - python
      - fftw
 #     - cfitsio
@@ -35,8 +37,6 @@ requirements:
      - libpng
      - zlib
      - libxml2
-     - blas
-     - openblas
      - gsl
      - krb5
      - readline
@@ -54,8 +54,6 @@ requirements:
      - libpng
      - zlib
      - libxml2
-     - blas
-     - openblas
      - gsl
      - krb5
      - readline
