@@ -34,6 +34,7 @@ requirements:
      # On OSX a builtin freetype is forced for cocoa=ON builds.
      # => Add libpng as a build requirement for freetype here instead.
      - libpng  # [osx]
+     - libtool  # [osx]
      - ftgl
      - gfal2
      - glew
