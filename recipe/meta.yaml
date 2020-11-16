@@ -53,6 +53,7 @@ requirements:
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xrootd
+     - xxhash
      - xz
      - zlib
  run:
@@ -65,6 +66,7 @@ requirements:
      - xorg-libxext  # [linux]
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
+     - xxhash
 
 test:
   commands:
