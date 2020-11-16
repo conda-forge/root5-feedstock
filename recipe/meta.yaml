@@ -40,7 +40,7 @@ requirements:
      - krb5
      - readline
      - icu
-
+     - pcre
  run:
      - python
      - fftw
