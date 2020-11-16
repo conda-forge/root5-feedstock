@@ -22,41 +22,48 @@ requirements:
 #     - {{ compiler('fortran') }}
      - {{ compiler('c') }}
      - {{ compiler('cxx') }}
+     - {{ cdt('mesa-libgl-devel') }}  # [linux]
  host:
-     - libblas
-     - libcblas
-     - python
-     - fftw
+     - afterimage
 #     - cfitsio
-     - mesalib
-     - xorg-libxft  # [linux]
-     - xorg-libxpm  # [linux]
-     - xorg-libsm  # [linux]
-     - jpeg
-     - libpng
-     - zlib
-     - libxml2
-     - gsl
-     - krb5
-     - readline
-     - icu
+     - davix
+     - dcap
+     - fftw
      - freetype
      - ftgl
+     - gfal2
      - glew
+     - graphviz
      - gsl
+     - icu
+     - krb5
+     - libcblas
+     - libglu  # [linux]
+     - libxml2
      - lz4-c
+     - openldap
      - openssl
      - pcre
+     - python
+     - readline
+     - xorg-libsm  # [linux]
+     - xorg-libx11  # [linux]
+     - xorg-libxext  # [linux]
+     - xorg-libxft  # [linux]
+     - xorg-libxpm  # [linux]
      - xrootd
      - xz
      - zlib
  run:
-     - python
 #     - cfitsio
-     - mesalib
+     - graphviz
+     - libglu  # [linux]
+     - python
+     - xorg-libsm  # [linux]
+     - xorg-libx11  # [linux]
+     - xorg-libxext  # [linux]
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
-     - xorg-libsm  # [linux]
 
 test:
   commands:

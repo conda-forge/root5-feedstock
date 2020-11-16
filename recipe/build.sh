@@ -17,12 +17,13 @@ cmake .. ${platform_options} \
     -Dexplicit_link=ON -Dgsl_shared=ON -Dccache=OFF \
     -Dfftw3=ON -Dfitsio=OFF -Dmathmore=ON -Dminuit2=ON -Dreflex=ON \
     -Dpython=ON -Droofit=ON -Dtable=ON -Dthread=ON -Dunuran=ON -Dvdt=ON -Dxml=ON \
-    -Dasimage=OFF -Dastiff=OFF -Dbonjour=OFF -Dfortran=OFF -Dsqlite=OFF -Dtmva=OFF \
+    -Dasimage=ON -Dastiff=OFF -Dbonjour=OFF -Dfortran=OFF -Dsqlite=OFF -Dtmva=OFF \
     -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/etc/root \
     -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_BUILD_TYPE=Release \
+    -Dbuiltin_afterimage=OFF \
     -Dbuiltin_ftgl=OFF \
     -Dbuiltin_freetype=OFF \
-    -Dbuiltin_glew=ON \
+    -Dbuiltin_glew=OFF \
     -Dbuiltin_openssl=OFF \
     -Dbuiltin_pcre=OFF \
     -Dbuiltin_zlib=OFF \
@@ -30,6 +31,7 @@ cmake .. ${platform_options} \
     -Dbuiltin_lz4=OFF \
     -Dbuiltin_davix=OFF \
     -Dbuiltin_gsl=OFF \
+    -Dbuiltin_cfitsio=OFF \
     -Dbuiltin_xrootd=OFF \
     -Dcxx11=OFF \
     -Dcxx14=ON \
