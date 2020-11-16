@@ -1,0 +1,15 @@
+diff --git a/graf2d/freetype/CMakeLists.txt b/graf2d/freetype/CMakeLists.txt
+index 45b8e11..eeebb63 100644
+--- a/graf2d/freetype/CMakeLists.txt
++++ b/graf2d/freetype/CMakeLists.txt
+@@ -82,8 +82,8 @@ else()
+                      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} )
+   # configure and make freetype, this command depends on the unpacked package 
+   add_custom_command(OUTPUT ${freetypeliba}  
+-                     COMMAND CC=${FREETYPE_CC} CFLAGS=${FREETYPE_CFLAGS} ./configure --with-pic --disable-shared ${FREETYPE_ZLIB} > /dev/null 2>&1
+-                     COMMAND make modules all > /dev/null 2>&1
++                     COMMAND CC=${FREETYPE_CC} CFLAGS="${CMAKE_C_FLAGS} ${FREETYPE_CFLAGS}" ./configure --with-pic --disable-shared ${FREETYPE_ZLIB} || { cat builds/unix/config.log \; false \; }
++                     COMMAND make modules all
+                      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${FREETYPE_VERSION} 
+                      DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${FREETYPE_VERSION}/unpacked
+                     )

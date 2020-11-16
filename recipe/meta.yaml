@@ -1,15 +1,15 @@
-{% set name = "root5" %}
 {% set version = "5.34.38" %}
 {% set sha256 = "2c3bda69601d94836bdd88283a6585b4774eafc813deb6aa348df0af2922c4d2" %}
 
 package:
-  name: {{ name|lower }}
+  name: root5
   version: {{ version }}
 
 source:
-  fn: root_v{{ version }}.source.tar.gz
   url: https://root.cern.ch/download/root_v{{ version }}.source.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-Non-quiet-builtin-freetype-with-CFLAGS.patch
 
 build:
    number: 3
