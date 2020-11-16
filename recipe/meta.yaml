@@ -18,11 +18,12 @@ build:
 requirements:
 
  build:
-     - cmake
 #     - {{ compiler('fortran') }}
      - {{ compiler('c') }}
      - {{ compiler('cxx') }}
      - {{ cdt('mesa-libgl-devel') }}  # [linux]
+     - cmake
+     - pkg-config
  host:
      - afterimage
 #     - cfitsio
