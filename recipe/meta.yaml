@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  fn: root_v{{version}}.source.tar.gz
-  url: https://root.cern.ch/download/root_v{{version}}.source.tar.gz
+  fn: root_v{{ version }}.source.tar.gz
+  url: https://root.cern.ch/download/root_v{{ version }}.source.tar.gz
   sha256: {{ sha256 }}
 
 build:
-   number: 2
+   number: 3
    skip: true  # [win]
    skip: true  # [py3k]
 
