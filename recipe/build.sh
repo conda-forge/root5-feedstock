@@ -4,8 +4,7 @@ set -x
 
 cd build
 
-export CFLAGS="${CFLAGS} -I${PREFIX}/include"
-export CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include"
+export CXXFLAGS="${CXXFLAGS} -std=c++14"
 
 export COMMON_OPTIONS="-Dall=OFF -Dgnuinstall=ON -Drpath=ON -Dsoversion=ON -DBUILD_SHARED_LIBS=ON \
                        -Dexplicit_link=ON -Dgsl_shared=ON -Dccache=OFF \
