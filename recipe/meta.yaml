@@ -13,8 +13,7 @@ source:
 
 build:
    number: 3
-   skip: true  # [win]
-   skip: true  # [py3k]
+   skip: true  # [win or py>30]
 
 requirements:
  
