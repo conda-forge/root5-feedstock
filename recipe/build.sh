@@ -7,6 +7,13 @@ cd build
 case "${target_platform}" in
     osx-*)
         platform_options='-Dcocoa=ON -Dlibcxx=ON -DCMAKE_VERBOSE_MAKEFILE=ON'
+
+export CFLAGS="-isystem ${PREFIX}/include"
+export CPPFLAGS="-isystem ${PREFIX}/include -mmacosx-version-min=10.9"
+export LDFLAGS="-Wl,-headerpad_max_install_names -Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib"
+export LDFLAGS_LD="-headerpad_max_install_names -rpath ${PREFIX}/lib -L${PREFIX}/lib"
+export CXXFLAGS="-stdlib=libc++ -std=c++14 -isystem ${PREFIX}/include"
+
     ;;
     linux-*)
         platform_options='-Dx11=ON -Dxft=ON'
