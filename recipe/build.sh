@@ -6,7 +6,7 @@ cd build
 
 case "${target_platform}" in
     osx-*)
-        platform_options='-Dcocoa=ON -Dlibcxx=ON'
+        platform_options='-Dcocoa=ON -Dlibcxx=ON -DCMAKE_VERBOSE_MAKEFILE=ON'
     ;;
     linux-*)
         platform_options='-Dx11=ON -Dxft=ON'
