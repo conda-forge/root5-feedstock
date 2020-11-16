@@ -1,0 +1,10 @@
+python:
+  - 2.7.* *_cpython
+python_impl:
+  - cpython
+numpy:
+  - 1.16
+
+# xrootd>=5 has not been built for Py2.7.
+xrootd:
+  - 4

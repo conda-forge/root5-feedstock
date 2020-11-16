@@ -1,66 +1,76 @@
-{% set name = "root5" %}
 {% set version = "5.34.38" %}
 {% set sha256 = "2c3bda69601d94836bdd88283a6585b4774eafc813deb6aa348df0af2922c4d2" %}
 
 package:
-  name: {{ name|lower }}
+  name: root5
   version: {{ version }}
 
 source:
-  fn: root_v{{ version }}.source.tar.gz
   url: https://root.cern.ch/download/root_v{{ version }}.source.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-Non-quiet-builtin-freetype-with-CFLAGS.patch
 
 build:
    number: 3
-   skip: true  # [win]
-   skip: true  # [py3k]
+   skip: true  # [win or py>30]
 
 requirements:
- 
+
  build:
-     - cmake
 #     - {{ compiler('fortran') }}
      - {{ compiler('c') }}
      - {{ compiler('cxx') }}
+     - {{ cdt('mesa-libgl-devel') }}  # [linux]
+     - cmake
+     - pkg-config
  host:
-     - python
-     - fftw
+     - afterimage
 #     - cfitsio
-     - mesalib
+     - davix
+     - dcap
+     - fftw
+     - freetype  # [linux]
+     # On OSX a builtin freetype is forced for cocoa=ON builds.
+     # => Add libpng as a build requirement for freetype here instead.
+     - libpng  # [osx]
+     - libtool  # [osx]
+     - ftgl
+     - gfal2
+     - glew
+     - graphviz
+     - gsl
+     - icu
+     - krb5
+     - libcblas
+     - libglu  # [linux]
+     - libxml2
+     - lz4-c
+     - openldap
+     - openssl
+     - pcre
+     - python
+     - readline
+     - xorg-libsm  # [linux]
+     - xorg-libx11  # [linux]
+     - xorg-libxext  # [linux]
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
-     - xorg-libsm  # [linux]
-     - jpeg
-     - libpng
+     - xrootd
+     - xxhash
+     - xz
      - zlib
-     - libxml2
-     - blas
-     - openblas
-     - gsl
-     - krb5
-     - readline
-     - icu
-
  run:
-     - python
-     - fftw
 #     - cfitsio
-     - mesalib
+     - graphviz
+     - libglu  # [linux]
+     - python
+     - xorg-libsm  # [linux]
+     - xorg-libx11  # [linux]
+     - xorg-libxext  # [linux]
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
-     - xorg-libsm  # [linux]
-     - jpeg
-     - libpng
-     - zlib
-     - libxml2
-     - blas
-     - openblas
-     - gsl
-     - krb5
-     - readline
-     - icu
-
+     - xxhash
 
 test:
   commands:
