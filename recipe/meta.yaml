@@ -30,7 +30,10 @@ requirements:
      - davix
      - dcap
      - fftw
-     - freetype
+     - freetype  # [linux]
+     # On OSX a builtin freetype is forced for cocoa=ON builds.
+     # => Add libpng as a build requirement for freetype here instead.
+     - libpng  # [osx]
      - ftgl
      - gfal2
      - glew
