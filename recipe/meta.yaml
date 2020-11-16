@@ -16,7 +16,7 @@ build:
    skip: true  # [win or py>30]
 
 requirements:
- 
+
  build:
      - cmake
 #     - {{ compiler('fortran') }}
@@ -40,24 +40,23 @@ requirements:
      - krb5
      - readline
      - icu
+     - freetype
+     - ftgl
+     - glew
+     - gsl
+     - lz4-c
+     - openssl
      - pcre
+     - xrootd
+     - xz
+     - zlib
  run:
      - python
-     - fftw
 #     - cfitsio
      - mesalib
      - xorg-libxft  # [linux]
      - xorg-libxpm  # [linux]
      - xorg-libsm  # [linux]
-     - jpeg
-     - libpng
-     - zlib
-     - libxml2
-     - gsl
-     - krb5
-     - readline
-     - icu
-
 
 test:
   commands:
