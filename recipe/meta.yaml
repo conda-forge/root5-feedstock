@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-   number: 3
+   number: 4
    skip: true  # [win]
    skip: true  # [py3k]
 
@@ -72,8 +72,6 @@ test:
     # file which is read when ROOT starts
     # Committing these because they take too long and the Travis CI and Circle CI build
     # would time out
-    #- conda inspect linkages -p $PREFIX root5  # [not win]
-    #- conda inspect objects -p $PREFIX root5  # [osx]
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/roofit/rf101_basics.C >& /dev/null
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/fft/FFT.C >& /dev/null
     - root -b -q -x ${PREFIX}/share/doc/root/tutorials/physics/PhaseSpace.C >& /dev/null
